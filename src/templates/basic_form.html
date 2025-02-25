@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tax Deduction Eligibility Form</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #f8f9fa;
+      }
+      .container {
+        max-width: 600px;
+        margin: 50px auto;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      .form-check-inline {
+        margin-right: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="text-center mb-4">Tax Deduction Eligibility Form</h2>
+      <form action="/submit_basic_form" method="POST">
+        <!-- Full Name -->
+        <div class="mb-3">
+          <label class="form-label">Full Name</label>
+          <input type="text" class="form-control" name="name" required />
+        </div>
+
+        <!-- Age -->
+        <div class="mb-3">
+          <label class="form-label">Age</label><br />
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="age"
+              value="below60"
+              required
+            />
+            <label class="form-check-label">Below 60</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="age"
+              value="60-80"
+            />
+            <label class="form-check-label">60-80 (Senior Citizen)</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="age"
+              value="80+"
+            />
+            <label class="form-check-label">80+ (Super Senior Citizen)</label>
+          </div>
+        </div>
+
+        <!-- Occupation -->
+        <div class="mb-3">
+          <label class="form-label">Occupation</label>
+          <select class="form-select" name="occupation" required>
+            <option value="">Select</option>
+            <option value="salaried">Salaried</option>
+            <option value="self-employed">Self-employed</option>
+            <option value="business-owner">Business Owner</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <!-- Annual Gross Income -->
+        <div class="mb-3">
+          <label class="form-label">Annual Gross Income</label>
+          <input type="number" class="form-control" name="income" required />
+        </div>
+
+        <!-- Tax-saving Investments -->
+        <div class="mb-3">
+          <label class="form-label"
+            >Do you contribute to tax-saving investments (Life Insurance, PF,
+            NPS, etc.)?</label
+          ><br />
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="investments"
+              value="yes"
+              required
+            />
+            <label class="form-check-label">Yes</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="investments"
+              value="no"
+            />
+            <label class="form-check-label">No</label>
+          </div>
+        </div>
+
+        <!-- Health Insurance -->
+        <div class="mb-3">
+          <label class="form-label">Do you have health insurance?</label><br />
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              name="health-insurance"
+              value="self"
+            />
+            <label class="form-check-label">For Self & Family</label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              name="health-insurance"
+              value="parents"
+            />
+            <label class="form-check-label"
+              >For Parents (if senior citizens)</label
+            >
+          </div>
+        </div>
+
+        <!-- Dependent with Disability -->
+        <div class="mb-3">
+          <label class="form-label"
+            >Do you have a dependent with a disability?</label
+          ><br />
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="disability"
+              value="yes"
+              required
+            />
+            <label class="form-check-label">Yes</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="disability"
+              value="no"
+            />
+            <label class="form-check-label">No</label>
+          </div>
+        </div>
+
+        <!-- Loans -->
+        <div class="mb-3">
+          <label class="form-label"
+            >Have you taken a loan for any of the following?</label
+          ><br />
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              name="loan"
+              value="education"
+            />
+            <label class="form-check-label">Education Loan</label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              name="loan"
+              value="home"
+            />
+            <label class="form-check-label">Home Loan</label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              name="loan"
+              value="ev"
+            />
+            <label class="form-check-label">Electric Vehicle Loan</label>
+          </div>
+        </div>
+
+        <!-- Donations -->
+        <div class="mb-3">
+          <label class="form-label"
+            >Have you made donations to charities or political parties?</label
+          ><br />
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="donations"
+              value="yes"
+              required
+            />
+            <label class="form-check-label">Yes</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="donations"
+              value="no"
+            />
+            <label class="form-check-label">No</label>
+          </div>
+        </div>
+
+        <!-- Interest from Savings or Deposits -->
+        <div class="mb-3">
+          <label class="form-label"
+            >Do you earn interest from savings or deposits?</label
+          ><br />
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              name="interest"
+              value="savings"
+            />
+            <label class="form-check-label">Savings Account</label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              name="interest"
+              value="fd"
+            />
+            <label class="form-check-label"
+              >Fixed Deposits (For Senior Citizens)</label
+            >
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
