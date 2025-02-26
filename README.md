@@ -4,6 +4,8 @@
 
 ClaimMax AI is an AI-powered tax deduction assistant designed to help users identify potential tax deductions they are eligible for. The application also provides recommendations on investment strategies to maximize tax benefits in future filings. Built on Flask, the application leverages the Gemini API to generate intelligent responses and insights.
 
+Code Root Repository: https://github.com/erum-meraj/ClaimMax-AI
+
 ## Problem Statement
 
 Many taxpayers are unaware of their potential tax refunds, leading to missed savings and inefficient financial planning. Our solution aims to simplify this process by providing an AI-driven predictive model that estimates tax refunds based on income, deductions, and previous filings.
